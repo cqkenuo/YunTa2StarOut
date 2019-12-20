@@ -81,7 +81,7 @@ function XiaoYu_XingWaiVPS_CreateService($params){
 		'data' => array(
 			'vpsname' => $params['service']['username'],
 			'vpspassword' => $params['service']['password'],
-			'year' => $params['service']['time']/10,
+			'year' => $params['service']['time']['remark'],
 			'id' => $configoption['productid'],
 			'ServerlistID' => $configoption['serverlistid'],
 		),
@@ -93,7 +93,7 @@ function XiaoYu_XingWaiVPS_CreateService($params){
 			'status' => 'success',
 			'username' => $params['service']['username'],
 			'password' => $params['service']['password'],
-			'enddate' => date('Y-m-d',strtotime("+{$params['time']} months", time())),
+			'enddate' => date('Y-m-d',strtotime("+{$year * 10} months", time())),
 			'configoption' => $itemid[1],
 			'msg' => $params['service']['username'],
 		);
@@ -128,7 +128,7 @@ function XiaoYu_XingWaiVPS_RenewService($params){
         ),
     );
   	XiaoYu_XingWaiVPS_GETDATA($XiaoYu_XingWaiVPS_GETDATA);
-	$year = $params['data']['time']/10;
+	$year = $params['data']['time']['remark'];
 	$XiaoYu_XingWaiVPS_POSTDATA = array(
 		'url' => $http.$params['server']['serverip'] . "/user/vpsadmrepay2.asp",
 		'cookie' => $cookie,
@@ -147,7 +147,7 @@ function XiaoYu_XingWaiVPS_RenewService($params){
 	if(strstr($content, '服务器延期成功')){
 		return array(
 			'status' => 'success',
-			'enddate' => date('Y-m-d', strtotime("+{$params['data']['time']} months", strtotime($params['service']['enddate']))),
+			'enddate' => date('Y-m-d', strtotime("+{$year * 10} months", strtotime($params['service']['enddate']))),
 		);
 	}else{
 		@preg_match('/e=(.*)\\n/iU', $content, $errmsg);

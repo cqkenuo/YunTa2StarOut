@@ -6,5 +6,5 @@
  ![l9ARkn.png](https://s2.ax1x.com/2019/12/23/l9ARkn.png)
  3. 上传main.php如下：
  ![l9EV9P.png](https://s2.ax1x.com/2019/12/23/l9EV9P.png)
-# 安装教程
+# 配置教程
  ![l9ZCFA.png](https://s2.ax1x.com/2019/12/23/l9ZCFA.png)

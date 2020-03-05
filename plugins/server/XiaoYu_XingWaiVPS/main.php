@@ -51,8 +51,8 @@ function XiaoYu_XingWaiVPS_GETDATA($params){
 
 function XiaoYu_XingWaiVPS_ConfigOption(){
 	return array(
-		'serverlistid' => '机房编号',
-		'productid' => '产品编号',
+		'serverlistid' => array('label' => '机房ID', 'placeholder' => '机房ID', 'type' => 'number'),
+		'productid' => array('label' => '产品ID', 'placeholder' => '产品ID', 'type' => 'number'),
 	);
 }
 

@@ -2,8 +2,8 @@
 
 //星外对接
 //作责：地狱筱雨
-//邮箱：2031464675@qq.com
-//赞助：地狱云主机idc.netech.cc
+//邮箱：2119566807@qq.com
+//赞助：苏塔云计算www.sutaidc.com
 
 function XiaoYu_XingWaiVPS_GETSESSION($params){
   	$ch = curl_init(); 
@@ -54,10 +54,6 @@ function XiaoYu_XingWaiVPS_ConfigOption(){
 		'serverlistid' => array('label' => '机房ID', 'placeholder' => '机房ID', 'type' => 'number'),
 		'productid' => array('label' => '产品ID', 'placeholder' => '产品ID', 'type' => 'number'),
 	);
-}
-
-function XiaoYu_XingWaiVPS_LoginService($params){
-	return '<form action="'.$params['server']['servercpanel'].'vpsadm/login.asp" method="POST"><input type="hidden" value="'.$params['service']['username'].'" name="vpsname"><input type="hidden" value="'.$params['service']['password'].'" name="VPSpassword"><button type="submit">点击登陆</button></form>';
 }
 
 function XiaoYu_XingWaiVPS_CreateService($params){
